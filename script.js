@@ -13,6 +13,14 @@ function saveCanvas() {
     win.document.write(`<iframe src="${dataURL}" frameborder="0" style="border:0; top:0px; left:0px; bottom:0px; right:0px; width:100%; height:100%;" allowfullscreen></iframe>`);
 }
 
+// SAVE YOUR BIG CANVAS
+function saveCanvasBig() {
+    var canvas = document.getElementById('canvasBig');
+    var dataURL = canvas.toDataURL();
+
+    var win = window.open();
+    win.document.write(`<iframe src="${dataURL}" frameborder="0" style="border:0; top:0px; left:0px; bottom:0px; right:0px; width:100%; height:100%;" allowfullscreen></iframe>`);
+}
 
 // IMAGE STRUCTURE (4 pixels)
 var image = [
@@ -187,5 +195,6 @@ function draw(xCoord, yCoord, ColourRGB) {
 
     ctxBig.fillStyle = ColourRGB
     ctxBig.fillRect(xCoord*resizevar, yCoord*resizevar, 1*resizevar, 1*resizevar);
+
 }
 
